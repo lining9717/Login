@@ -100,8 +100,7 @@ public class Register extends AppCompatActivity {
         btnLinkToLogin.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(),
-                        Login.class);
+                Intent i = new Intent(getApplicationContext(),Login.class);
                 startActivity(i);
                 finish();
             }
@@ -122,7 +121,11 @@ public class Register extends AppCompatActivity {
         pDialog.setMessage("Registering ...");
         if (!pDialog.isShowing()) pDialog.show();
         //Todo: Need to check Internet connection
-        new DownloadData().execute(name, email, password);
+        //Todo : ensure the user has Internet connection
+        if(!IsInternet.isNetworkAvalible(this))
+            IsInternet.checkNetwork(Register.this);
+        else
+            new DownloadData().execute(name, email, password);
 
 
     }

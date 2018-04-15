@@ -107,22 +107,20 @@ public class Login extends AppCompatActivity {
 
         // Check for empty data in the form
         if (!email.isEmpty() && !password.isEmpty()) {
-
-            // Avoid multiple clicks on the button
-            loginButton.setClickable(false);
-
             //Todo : ensure the user has Internet connection
-
-            // Display the progress Dialog
-            progressDialog.setMessage("Logging in ...");
-            if (!progressDialog.isShowing())
-                progressDialog.show();
-
-            //Todo: need to check weather the user has Internet before attempting checking the data
-            // Start fetching the data from the Internet
-            new OnlineCredentialValidation().execute(email,password);
-
-
+            if(!IsInternet.isNetworkAvalible(this)){
+                IsInternet.checkNetwork(Login.this);
+            }else{
+                // Avoid multiple clicks on the button
+                loginButton.setClickable(false);
+                // Display the progress Dialog
+                progressDialog.setMessage("Logging in ...");
+                if (!progressDialog.isShowing())
+                    progressDialog.show();
+                //Todo: need to check weather the user has Internet before attempting checking the data
+                // Start fetching the data from the Internet
+                new OnlineCredentialValidation().execute(email,password);
+            }
         } else {
             // Prompt user to enter credentials
             Toast.makeText(getApplicationContext(),

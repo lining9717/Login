@@ -3,6 +3,8 @@
     package="mg.studio.myapplication">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
         android:allowBackup="true"
@@ -34,6 +36,59 @@
             android:label="@string/app_name"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
+        <activity android:name=".LifeCycle.LifeCycle_Activity"/>
+        <activity android:name=".LifeCycle.LifeCycle"/>
+        <activity android:name=".LifeCycle.LifeCycle_Dialog"
+            android:theme="@style/Theme.AppCompat.Dialog"/>
+        <activity android:name=".UserName.UserName"/>
+        <activity android:name=".UserName_Final.Username_final"/>
+
+        <activity android:name=".Layout.Layout_Main"/>
+        <activity android:name=".Layout.Layout_LinearLayout"
+            android:label="Linear Layout" />
+        <activity
+            android:name=".Layout.Layout_Relativelayout"
+            android:label="Relative Layout" />
+        <activity android:name=".Layout_Final.Layout_Final_Main"/>
+        <activity android:name=".Button_Design.Button_Design"/>
+        <activity android:name=".Button_Toast.Button_Toast_Main"/>
+        <activity android:name=".Button_Intent.Button_Intent"/>
+        <activity android:name=".Button_StartActivity.Button_StartActivity_Second"/>
+        <activity android:name=".Button_StartActivity.Button_StartActivity_Main"/>
+        <activity android:name=".Button_StartActivity_Extra.Button_StartActivity_Extra_Second"/>
+        <activity android:name=".Button_StartActivity_Extra.Button_StartActivity_Extra_Main"/>
+        <activity android:name=".ImageButton.ImageButton"/>
+        <activity android:name=".EditText.EditText_Main"/>
+        <activity android:name=".RadioButton_Listener.RadioButton_Listener"/>
+        <activity android:name=".RadioButton_OnClick.RadioButton_OnClick"/>
+        <activity android:name=".ListView.ListView_Main"/>
+        <activity android:name=".GetColor.GetColor"/>
+        <activity android:name=".GradientBackground.GradientBackground"/>
+        <activity android:name=".ImplicIntent.AppIntentCaller"/>
+        <activity android:name=".ImplicIntent.ImplicIntent_Main"/>
+        <activity android:name=".ImplicIntent.AppIntentReceiver"/>
+        <activity android:name=".ImplicIntent.AppIntentReceiver_Second"/>
+        <activity android:name=".Weather.Weather"/>
+        <activity android:name=".ListView2.ListView2"/>
+        <activity android:name=".ListViewCustomAdapter.ListViewCustomAdapter"/>
+        <activity android:name=".AudioRecord.AudioRecord"/>
+        <activity android:name=".DataBase.Database"/>
+        <activity android:name=".fragment.Fragment_Main"/>
+        <activity android:name=".WebView_Activity.WebView_Main"/>
+        <activity android:name=".ServiceDemo.ServiceDemo_Main"/>
+        <activity android:name=".Service.Service_Main"/>
+        <activity android:name=".FingerPrint.FingerPrint"/>
+        <activity android:name=".AppPrivateDirectory.AppPrivateDirectory"/>
+        <activity android:name=".AssertFolder.AssertFolder"/>
+        <activity android:name=".Intent_Extra.NewActivity"/>
+        <activity android:name=".Intent_Extra.IntentExtra_Main"/>
+        <service
+            android:name=".Service.MyService"
+            android:process=":newService"
+            android:enabled="true"
+            android:exported="false" />
+        <service android:name=".ServiceDemo.MyService"
+            android:process=":SeparateProcess"/>
     </application>
 
 </manifest>
